@@ -1,0 +1,31 @@
+<menu></menu>
+<div class="main-w3layouts wrapper">
+		<h1>Login Here</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form novalidate #loginForm="ngForm">
+					<input class="text" type="text" name="uname" [(ngModel)]="user.username" placeholder="Username" required="">
+					<input class="text" type="password" name="pwd" [(ngModel)]="user.password" placeholder="Password" required="">
+					<input type="submit" (click)="login()" value="LOGIN">
+				</form>
+				<p>Don't have an Account? <a href="#" [routerLink]="['/register']"> Signup Now!</a></p>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="kushi-agile">
+			<p>© 2019 Kushi Signup Form. All rights reserved | Design by Chandra</p>
+		</div>
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->

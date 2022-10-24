@@ -1,0 +1,40 @@
+<menu></menu>
+<div class="main-w3layouts wrapper">
+		<h1>Register Here</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form novalidate #registerForm="ngForm">
+					<input class="text" type="text" name="uname" [(ngModel)]="user.username" placeholder="Username" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" [(ngModel)]="user.emailId" required="">
+					<input class="text" type="password" name="pwd1" [(ngModel)]="user.password" placeholder="Password" required="">
+					<input class="text w3lpass" type="password" name="pwd2" [(ngModel)]="password2" placeholder="Confirm Password" required="">
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" (click)="register()" value="SIGNUP">
+				</form>
+				<p>Don't have an Account? <a href="#" [routerLink]="['/login']"> Login Now!</a></p>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="kushi-agile">
+			<p>© 2019 Kushi Signup Form. All rights reserved | Design by Chandra</p>
+		</div>
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->

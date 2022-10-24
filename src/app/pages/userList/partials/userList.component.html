@@ -1,0 +1,18 @@
+<button (click)="logout()">Logout</button>
+<table>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let user of users | async">
+        <td></td>
+        <td></td>
+        <td>
+            <button>Edit</button>
+            <button>Delete</button>
+
+        </td>
+    </tr>
+
+</table>

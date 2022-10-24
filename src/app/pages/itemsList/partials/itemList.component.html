@@ -1,0 +1,53 @@
+<div style="float:right">
+        <logout></logout>
+</div>
+
+
+
+
+
+<h1>Item List</h1>
+<a style="float:right;cursor:pointer" (click)="showAddFormFun()">ADD NEW</a>
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total Price</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="showAddForm">
+            <td scope="row"></td>
+            <td>
+                <input type="text" name="iname" [(ngModel)]="addItem.name" placeholder="ItemName" />
+            </td>
+            <td>
+                <input type="text" name="quantity" placeholder="Quantity" [(ngModel)]="addItem.quantity" />
+            </td>
+            <td>
+                <div style="border: 1px solid rosybrown;line-height: 2.6rem;">
+                        
+                </div>
+                
+            </td>
+            <td>
+                <input type="text" type="text" name="price" placeholder="Each Price" [(ngModel)]="addItem.price" />
+            </td>
+            <td>{{addThis(addItem.price,addItem.quantity)}}</td>
+            <td><button (click)="addNewItem()">Add</button>
+                <button (click)="showAddFormFun()">Cancel</button></td>
+        </tr>
+        <tr *ngFor="let item of items | async;let i = index" [attr.data-index]="i">
+            <td scope="row">{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.price}}</td>
+            <td>{{addThis(item.price,item.quantity)}}</td>
+        </tr>
+        
+    </tbody>
+</table>
