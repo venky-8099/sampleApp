@@ -41,13 +41,15 @@
             <td><button (click)="addNewItem()">Add</button>
                 <button (click)="showAddFormFun()">Cancel</button></td>
         </tr>
-        <tr *ngFor="let item of items | async;let i = index" [attr.data-index]="i">
+        <tr *ngFor="let item of items?.name?.quantity?.price; let i = index" [attr.data-index]="i">
             <td scope="row">{{i+1}}</td>
             <td>{{item.name}}</td>
             <td>{{item.quantity}}</td>
             <td>{{item.price}}</td>
             <td>{{addThis(item.price,item.quantity)}}</td>
+            <td>Edit</td>
         </tr>
         
     </tbody>
 </table>
+<item-count></item-count>
