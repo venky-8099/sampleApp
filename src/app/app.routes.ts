@@ -7,6 +7,7 @@ import { AuthGuard } from './common/guards/auth.guard';
 import { ProtectDataGaurd } from './common/guards/protectData.guard';
 import { EditUserComponent } from './register/components/editUser.component';
 import { ItemListComponent } from "./pages/itemsList/components/itemList.component";
+import { ItemCount } from "./pages/itemCount/item.count.component";
 
 export const routes = [
     { path: "home", component: HomeComponent },
@@ -15,6 +16,7 @@ export const routes = [
     { path: "login", component: LoginComponent },
     { path: "userList", component: UserListComponent,canActivate:[AuthGuard] },
     { path: "itemList", component:ItemListComponent,canActivate:[AuthGuard]},
+    { path: "itemCount", component:ItemCount,canActivate:[AuthGuard]},
     {path:"edit_user/:userId",component:EditUserComponent},
    // {path:"adminHome",loadChildren:'./admin/pages/admin.module#AdminModule'},
     { path: "", component: LoginComponent },
