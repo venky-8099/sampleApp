@@ -22,16 +22,3 @@ exports.all = function (req, res) {
         }
     })
 }
-
-exports.update = function (req, res) {
-    var sid = req.body._id;
-    Item.findById(sid, function (err, doc) {
-        doc.name = req.body.name;
-        doc.quantity = req.body.quantity;
-        doc.date = req.body.date;
-        doc.price = req.body.price;
-        doc.save(function () {
-            res.json(doc);
-        })
-    })
-}

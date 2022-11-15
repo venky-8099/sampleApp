@@ -21,7 +21,6 @@ router.post("/api/loginUser", function (req, res, next) {
 var item = require("../controllers/itemController");
 router.post("/api/addItem",VerifyToken,item.create);
 router.get("/api/listitems",VerifyToken, item.all);
-router.put("/api/updateItem",VerifyToken, item.update);
 
 
 //admin routes

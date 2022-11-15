@@ -24,12 +24,11 @@ import { ItemListComponent } from './pages/itemsList/components/itemList.compone
 import { AddItemComponent } from './pages/items/components/addItem.component';
 import { ItemService } from './common/services/item.service';
 import { LogoutComponent } from './logout/logout.component';
-import { ItemCount } from './pages/itemCount/item.count.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, MenuComponent, RegisterComponent, HomeComponent, AboutusComponent, LoginComponent, UserListComponent, EditUserComponent, disableInputDirective, CapitalPipe,ItemListComponent,AddItemComponent,LogoutComponent, ItemCount
+    AppComponent, MenuComponent, RegisterComponent, HomeComponent, AboutusComponent, LoginComponent, UserListComponent, EditUserComponent, disableInputDirective, CapitalPipe,ItemListComponent,AddItemComponent,LogoutComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes), FormsModule, HttpClientModule

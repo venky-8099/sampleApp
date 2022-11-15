@@ -12,19 +12,14 @@ import { Router } from "@angular/router";
 
 export class ItemListComponent {
     addItem: Item;
-    items:any;
+    items: Observable<Item[]>;
     showAddForm: boolean = false;
     totalCost:Number;
     public minDate: Date = new Date ("05/07/2017");
     public maxDate: Date = new Date ("05/27/2017");
     public dateValue: Date = new Date ("05/16/2017");
     constructor(private iService: ItemService, private router: Router) {
-        // this.items = <Observable<Item[]>>this.iService.getItems();
-        this.iService.getItems().subscribe((data) =>{
-            this.items = data;
-            this.iService.sub$.next(this.items);
-        });
-        
+        this.items = <Observable<Item[]>>this.iService.getItems();
         this.addItem = new Item();
     }
     showAddFormFun() {
@@ -35,8 +30,7 @@ export class ItemListComponent {
             if (data) {
                 this.showAddForm = !this.showAddForm;
                 this.addItem = new Item();
-                this.items = this.iService.getItems();
-                this.iService.sub$.next(this.items);
+                this.items = <Observable<Item[]>>this.iService.getItems();
             }
         })
     };
