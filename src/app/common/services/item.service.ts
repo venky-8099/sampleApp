@@ -9,7 +9,7 @@ export class ItemService{
     addItem(item:Item){
         return this.http.post("http://localhost:3200/api/addItem",item);
     }
-    getItems():Observable<Item[]>{
-        return this.http.get<Item[]>("http://localhost:3200/api/listitems");
+    getItems(){
+        return this.http.get("http://localhost:3200/api/listitems");
     }
 }
